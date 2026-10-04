@@ -1,0 +1,14 @@
+.venv/
+__pycache__/
+*.pyc
+delivery/
+.build-history/
+analysis/
+.DS_Store
+build/
+dist/
+resources/models/*.pth
+resources/AppIcon.iconset/
+*.part
+.pytest_cache/
+*.log

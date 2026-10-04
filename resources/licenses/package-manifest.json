@@ -1,0 +1,229 @@
+[
+  {
+    "package": "torch",
+    "version": "2.14.1",
+    "notices": [
+      "torch/torch-2.14.1.dist-info/licenses/LICENSE",
+      "torch/torch-2.14.1.dist-info/licenses/third_party/FP16/LICENSE",
+      "torch/torch-2.14.1.dist-info/licenses/third_party/FXdiv/LICENSE",
+      "torch/torch-2.14.1.dist-info/licenses/third_party/NNPACK/LICENSE",
+      "torch/torch-2.14.1.dist-info/licenses/third_party/NVTX/LICENSE.txt",
+      "torch/torch-2.14.1.dist-info/licenses/third_party/NVTX/docs/LICENSE.txt",
+      "torch/torch-2.14.1.dist-info/licenses/third_party/NVTX/python/LICENSE.txt",
+      "torch/torch-2.14.1.dist-info/licenses/third_party/NVTX/rust/LICENSE",
+      "torch/torch-2.14.1.dist-info/licenses/third_party/VulkanMemoryAllocator/LICENSE.txt",
+      "torch/torch-2.14.1.dist-info/licenses/third_party/XNNPACK/LICENSE",
+      "torch/torch-2.14.1.dist-info/licenses/third_party/aiter/3rdparty/composable_kernel/LICENSE",
+      "torch/torch-2.14.1.dist-info/licenses/third_party/aiter/LICENSE",
+      "torch/torch-2.14.1.dist-info/licenses/third_party/benchmark/LICENSE",
+      "torch/torch-2.14.1.dist-info/licenses/third_party/composable_kernel/LICENSE",
+      "torch/torch-2.14.1.dist-info/licenses/third_party/cpp-httplib/LICENSE",
+      "torch/torch-2.14.1.dist-info/licenses/third_party/cpuinfo/LICENSE",
+      "torch/torch-2.14.1.dist-info/licenses/third_party/cpuinfo/deps/clog/LICENSE",
+      "torch/torch-2.14.1.dist-info/licenses/third_party/cudnn_frontend/LICENSE.txt",
+      "torch/torch-2.14.1.dist-info/licenses/third_party/cutlass/LICENSE.txt",
+      "torch/torch-2.14.1.dist-info/licenses/third_party/cutlass/python/LICENSE.txt",
+      "torch/torch-2.14.1.dist-info/licenses/third_party/fbgemm/LICENSE",
+      "torch/torch-2.14.1.dist-info/licenses/third_party/fbgemm/external/composable_kernel/LICENSE",
+      "torch/torch-2.14.1.dist-info/licenses/third_party/fbgemm/external/cpuinfo/LICENSE",
+      "torch/torch-2.14.1.dist-info/licenses/third_party/fbgemm/external/cpuinfo/deps/clog/LICENSE",
+      "torch/torch-2.14.1.dist-info/licenses/third_party/fbgemm/external/cutlass/LICENSE.txt",
+      "torch/torch-2.14.1.dist-info/licenses/third_party/fbgemm/external/cutlass/python/LICENSE.txt",
+      "torch/torch-2.14.1.dist-info/licenses/third_party/fbgemm/external/googletest/LICENSE",
+      "torch/torch-2.14.1.dist-info/licenses/third_party/fbgemm/external/hipify_torch/LICENSE.txt",
+      "torch/torch-2.14.1.dist-info/licenses/third_party/fbgemm/fbgemm_gpu/experimental/hstu/LICENSE",
+      "torch/torch-2.14.1.dist-info/licenses/third_party/fbgemm/fbgemm_gpu/src/quantize_ops/mx/LICENSE",
+      "torch/torch-2.14.1.dist-info/licenses/third_party/fbgemm/fbgemm_gpu/test/quantize/mx/LICENSE",
+      "torch/torch-2.14.1.dist-info/licenses/third_party/flash-attention/LICENSE",
+      "torch/torch-2.14.1.dist-info/licenses/third_party/flash-attention/csrc/composable_kernel/LICENSE",
+      "torch/torch-2.14.1.dist-info/licenses/third_party/flash-attention/csrc/cutlass/LICENSE.txt",
+      "torch/torch-2.14.1.dist-info/licenses/third_party/flash-attention/csrc/cutlass/python/LICENSE.txt",
+      "torch/torch-2.14.1.dist-info/licenses/third_party/flash-attention/flash_attn/cute/LICENSE",
+      "torch/torch-2.14.1.dist-info/licenses/third_party/flash-attention/third_party/aiter/3rdparty/composable_kernel/LICENSE",
+      "torch/torch-2.14.1.dist-info/licenses/third_party/flash-attention/third_party/aiter/LICENSE",
+      "torch/torch-2.14.1.dist-info/licenses/third_party/flatbuffers/LICENSE",
+      "torch/torch-2.14.1.dist-info/licenses/third_party/flatbuffers/dart/LICENSE",
+      "torch/torch-2.14.1.dist-info/licenses/third_party/flatbuffers/swift/LICENSE",
+      "torch/torch-2.14.1.dist-info/licenses/third_party/fmt/LICENSE",
+      "torch/torch-2.14.1.dist-info/licenses/third_party/gemmlowp/gemmlowp/LICENSE",
+      "torch/torch-2.14.1.dist-info/licenses/third_party/gloo/LICENSE",
+      "torch/torch-2.14.1.dist-info/licenses/third_party/googletest/LICENSE",
+      "torch/torch-2.14.1.dist-info/licenses/third_party/ideep/LICENSE",
+      "torch/torch-2.14.1.dist-info/licenses/third_party/ideep/mkl-dnn/LICENSE",
+      "torch/torch-2.14.1.dist-info/licenses/third_party/ideep/mkl-dnn/third_party/gtest/LICENSE",
+      "torch/torch-2.14.1.dist-info/licenses/third_party/ideep/mkl-dnn/third_party/opencl/LICENSE",
+      "torch/torch-2.14.1.dist-info/licenses/third_party/kineto/LICENSE",
+      "torch/torch-2.14.1.dist-info/licenses/third_party/kineto/libkineto/third_party/dynolog_headers/LICENSE",
+      "torch/torch-2.14.1.dist-info/licenses/third_party/kineto/libkineto/third_party/fmt/LICENSE",
+      "torch/torch-2.14.1.dist-info/licenses/third_party/kineto/libkineto/third_party/googletest/LICENSE",
+      "torch/torch-2.14.1.dist-info/licenses/third_party/llvm-openmp/LICENSE.txt",
+      "torch/torch-2.14.1.dist-info/licenses/third_party/mimalloc/LICENSE",
+      "torch/torch-2.14.1.dist-info/licenses/third_party/miniz-3.0.2/LICENSE",
+      "torch/torch-2.14.1.dist-info/licenses/third_party/mslk/LICENSE",
+      "torch/torch-2.14.1.dist-info/licenses/third_party/mslk/external/composable_kernel/LICENSE",
+      "torch/torch-2.14.1.dist-info/licenses/third_party/mslk/external/cutlass/LICENSE.txt",
+      "torch/torch-2.14.1.dist-info/licenses/third_party/mslk/external/cutlass/python/LICENSE.txt",
+      "torch/torch-2.14.1.dist-info/licenses/third_party/mslk/external/googletest/LICENSE",
+      "torch/torch-2.14.1.dist-info/licenses/third_party/mslk/external/hipify_torch/LICENSE.txt",
+      "torch/torch-2.14.1.dist-info/licenses/third_party/mslk/mslk/attention/flash_attn/LICENSE",
+      "torch/torch-2.14.1.dist-info/licenses/third_party/nccl/LICENSE.txt",
+      "torch/torch-2.14.1.dist-info/licenses/third_party/nccl/bindings/nccl4py/LICENSE.txt",
+      "torch/torch-2.14.1.dist-info/licenses/third_party/nccl/contrib/nccl_checkpoint/python/LICENSE.txt",
+      "torch/torch-2.14.1.dist-info/licenses/third_party/nccl/contrib/nccl_ep/LICENSE.txt",
+      "torch/torch-2.14.1.dist-info/licenses/third_party/nccl/contrib/nccl_ubx/LICENSE.txt",
+      "torch/torch-2.14.1.dist-info/licenses/third_party/onnx/LICENSE",
+      "torch/torch-2.14.1.dist-info/licenses/third_party/onnx/third_party/pybind11/LICENSE",
+      "torch/torch-2.14.1.dist-info/licenses/third_party/perfetto/LICENSE",
+      "torch/torch-2.14.1.dist-info/licenses/third_party/protobuf/LICENSE",
+      "torch/torch-2.14.1.dist-info/licenses/third_party/protobuf/third_party/benchmark/LICENSE",
+      "torch/torch-2.14.1.dist-info/licenses/third_party/protobuf/third_party/googletest/LICENSE",
+      "torch/torch-2.14.1.dist-info/licenses/third_party/protobuf/third_party/googletest/googlemock/LICENSE",
+      "torch/torch-2.14.1.dist-info/licenses/third_party/protobuf/third_party/googletest/googlemock/scripts/generator/LICENSE",
+      "torch/torch-2.14.1.dist-info/licenses/third_party/protobuf/third_party/googletest/googletest/LICENSE",
+      "torch/torch-2.14.1.dist-info/licenses/third_party/protobuf/third_party/utf8_range/LICENSE",
+      "torch/torch-2.14.1.dist-info/licenses/third_party/psimd/LICENSE",
+      "torch/torch-2.14.1.dist-info/licenses/third_party/pthreadpool/LICENSE",
+      "torch/torch-2.14.1.dist-info/licenses/third_party/pybind11/LICENSE",
+      "torch/torch-2.14.1.dist-info/licenses/third_party/python-peachpy/LICENSE.rst",
+      "torch/torch-2.14.1.dist-info/licenses/third_party/sleef/LICENSE.txt",
+      "torch/torch-2.14.1.dist-info/licenses/third_party/tensorpipe/LICENSE.txt",
+      "torch/torch-2.14.1.dist-info/licenses/third_party/tensorpipe/third_party/googletest/LICENSE",
+      "torch/torch-2.14.1.dist-info/licenses/third_party/tensorpipe/third_party/googletest/googlemock/LICENSE",
+      "torch/torch-2.14.1.dist-info/licenses/third_party/tensorpipe/third_party/googletest/googlemock/scripts/generator/LICENSE",
+      "torch/torch-2.14.1.dist-info/licenses/third_party/tensorpipe/third_party/googletest/googletest/LICENSE",
+      "torch/torch-2.14.1.dist-info/licenses/third_party/tensorpipe/third_party/libnop/LICENSE",
+      "torch/torch-2.14.1.dist-info/licenses/third_party/tensorpipe/third_party/libuv/LICENSE",
+      "torch/torch-2.14.1.dist-info/licenses/third_party/tensorpipe/third_party/pybind11/LICENSE",
+      "torch/torch/_vendor/packaging/LICENSE",
+      "torch/torch/_vendor/packaging/LICENSE.APACHE",
+      "torch/torch/_vendor/packaging/LICENSE.BSD",
+      "torch/torch/_vendor/quack/LICENSE"
+    ]
+  },
+  {
+    "package": "Pillow",
+    "version": "11.3.0",
+    "notices": [
+      "Pillow/pillow-11.3.0.dist-info/licenses/LICENSE"
+    ]
+  },
+  {
+    "package": "numpy",
+    "version": "2.3.5",
+    "notices": [
+      "numpy/numpy-2.3.5.dist-info/LICENSE.txt",
+      "numpy/numpy/_core/include/numpy/random/LICENSE.txt",
+      "numpy/numpy/ma/LICENSE",
+      "numpy/numpy/random/LICENSE.md"
+    ]
+  },
+  {
+    "package": "filelock",
+    "version": "4.0.10",
+    "notices": [
+      "filelock/filelock-4.0.10.dist-info/licenses/LICENSE"
+    ]
+  },
+  {
+    "package": "fsspec",
+    "version": "2026.9.0",
+    "notices": [
+      "fsspec/fsspec-2026.9.0.dist-info/licenses/LICENSE"
+    ]
+  },
+  {
+    "package": "jinja2",
+    "version": "3.1.6",
+    "notices": [
+      "jinja2/jinja2-3.1.6.dist-info/licenses/LICENSE.txt"
+    ]
+  },
+  {
+    "package": "networkx",
+    "version": "3.7",
+    "notices": [
+      "networkx/networkx-3.7.dist-info/licenses/LICENSE.txt"
+    ]
+  },
+  {
+    "package": "sympy",
+    "version": "1.14.0",
+    "notices": [
+      "sympy/sympy-1.14.0.dist-info/licenses/LICENSE",
+      "sympy/sympy/parsing/latex/LICENSE.txt"
+    ]
+  },
+  {
+    "package": "typing_extensions",
+    "version": "4.16.0",
+    "notices": [
+      "typing_extensions/typing_extensions-4.16.0.dist-info/licenses/LICENSE"
+    ]
+  },
+  {
+    "package": "markupsafe",
+    "version": "3.0.4",
+    "notices": [
+      "markupsafe/markupsafe-3.0.4.dist-info/licenses/LICENSE.txt"
+    ]
+  },
+  {
+    "package": "PySide6",
+    "version": "6.11.2",
+    "notices": []
+  },
+  {
+    "package": "PySide6_Essentials",
+    "version": "6.11.2",
+    "notices": []
+  },
+  {
+    "package": "PySide6_Addons",
+    "version": "6.11.2",
+    "notices": []
+  },
+  {
+    "package": "shiboken6",
+    "version": "6.11.2",
+    "notices": []
+  },
+  {
+    "package": "pyinstaller",
+    "version": "6.22.3",
+    "notices": [
+      "pyinstaller/pyinstaller-6.22.3.dist-info/licenses/COPYING.txt"
+    ]
+  },
+  {
+    "package": "packaging",
+    "version": "26.3",
+    "notices": [
+      "packaging/packaging-26.3.dist-info/licenses/LICENSE",
+      "packaging/packaging-26.3.dist-info/licenses/LICENSE.APACHE",
+      "packaging/packaging-26.3.dist-info/licenses/LICENSE.BSD"
+    ]
+  },
+  {
+    "package": "setuptools",
+    "version": "84.0.0",
+    "notices": [
+      "setuptools/setuptools-84.0.0.dist-info/licenses/LICENSE",
+      "setuptools/setuptools/_vendor/autocommand-2.2.2.dist-info/LICENSE",
+      "setuptools/setuptools/_vendor/backports.tarfile-1.2.0.dist-info/LICENSE",
+      "setuptools/setuptools/_vendor/importlib_metadata-8.7.1.dist-info/licenses/LICENSE",
+      "setuptools/setuptools/_vendor/jaraco.text-4.0.0.dist-info/LICENSE",
+      "setuptools/setuptools/_vendor/jaraco_context-6.1.0.dist-info/licenses/LICENSE",
+      "setuptools/setuptools/_vendor/jaraco_functools-4.4.0.dist-info/licenses/LICENSE",
+      "setuptools/setuptools/_vendor/more_itertools-10.8.0.dist-info/licenses/LICENSE",
+      "setuptools/setuptools/_vendor/packaging-26.0.dist-info/licenses/LICENSE",
+      "setuptools/setuptools/_vendor/packaging-26.0.dist-info/licenses/LICENSE.APACHE",
+      "setuptools/setuptools/_vendor/packaging-26.0.dist-info/licenses/LICENSE.BSD",
+      "setuptools/setuptools/_vendor/platformdirs-4.4.0.dist-info/licenses/LICENSE",
+      "setuptools/setuptools/_vendor/tomli-2.4.0.dist-info/licenses/LICENSE",
+      "setuptools/setuptools/_vendor/wheel-0.46.3.dist-info/licenses/LICENSE.txt",
+      "setuptools/setuptools/_vendor/zipp-3.23.0.dist-info/licenses/LICENSE",
+      "setuptools/setuptools/config/NOTICE",
+      "setuptools/setuptools/config/_validate_pyproject/NOTICE"
+    ]
+  }
+]

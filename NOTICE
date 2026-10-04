@@ -1,0 +1,15 @@
+AI Upscale King / AI 圖片放大王
+Copyright 2026 Aesssss and AI Upscale King contributors.
+
+The original application code is licensed under the Apache License, Version 2.0.
+
+The RRDB inference architecture in app/rrdbnet.py is adapted from BasicSR:
+Copyright 2018-2022 BasicSR Authors. Licensed under Apache-2.0.
+https://github.com/XPixelGroup/BasicSR
+
+Real-ESRGAN model weights are unmodified and licensed under BSD-3-Clause:
+Copyright 2021, Xintao Wang. All rights reserved.
+https://github.com/xinntao/Real-ESRGAN
+
+Qt / PySide6 and other bundled components retain their own licenses.
+See THIRD_PARTY_NOTICES.md and resources/licenses for complete notices.

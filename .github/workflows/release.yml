@@ -1,0 +1,107 @@
+name: Build and release
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+    inputs:
+      publish:
+        description: Publish verified Windows and macOS packages to GitHub Releases
+        required: true
+        type: boolean
+        default: false
+permissions:
+  contents: read
+concurrency:
+  group: release-${{ github.ref }}-${{ github.event_name }}
+  cancel-in-progress: ${{ github.event_name != 'workflow_dispatch' }}
+jobs:
+  build:
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - os: macos-14
+            platform: macOS
+          - os: windows-2022
+            platform: Windows
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 45
+    env:
+      QT_QPA_PLATFORM: offscreen
+      PYTHONIOENCODING: utf-8
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          cache: pip
+      - name: Install Windows CPU inference runtime
+        if: runner.os == 'Windows'
+        run: python -m pip install torch==2.14.1 --index-url https://download.pytorch.org/whl/cpu
+      - name: Install pinned dependencies
+        run: python -m pip install -r requirements.txt
+      - name: Prepare bundled offline resources
+        run: python scripts/prepare_resources.py
+      - name: Core regression checks
+        run: python -m unittest discover -s tests -v
+      - name: Qt interaction checks
+        run: python scripts/ui_check.py
+      - name: Interface layout checks
+        run: python scripts/design_review.py
+      - name: Build native app
+        run: python scripts/build_native.py
+      - name: Verify real packaged GUI and AI exports
+        run: python scripts/release_check.py
+      - name: Package verified archives
+        run: python scripts/package_release.py
+      - name: Upload desktop releases and verification reports
+        uses: actions/upload-artifact@v4
+        with:
+          name: desktop-${{ matrix.platform }}
+          if-no-files-found: error
+          retention-days: 30
+          path: |
+            delivery/AIUpscaleKing-*.zip
+            delivery/AIUpscaleKing-*.sha256
+            delivery/AIUpscaleKing-*-verification.json
+      - name: Preserve test reports on failure
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: diagnostics-${{ matrix.platform }}
+          retention-days: 7
+          path: |
+            delivery/**/ui-report.json
+            delivery/**/design-gates.json
+            delivery/release-check-*/*.json
+  publish:
+    if: github.event_name == 'workflow_dispatch' && inputs.publish && github.ref == 'refs/heads/main'
+    needs: build
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/download-artifact@v4
+        with:
+          pattern: desktop-*
+          path: release-assets
+          merge-multiple: true
+      - name: Read application version
+        id: version
+        run: |
+          VERSION=$(sed -n "s/^VERSION = '\([^']*\)'/\1/p" app/core.py)
+          test -n "$VERSION"
+          echo "version=$VERSION" >> "$GITHUB_OUTPUT"
+      - name: Create or update the verified release
+        env:
+          GH_TOKEN: ${{ github.token }}
+          VERSION: ${{ steps.version.outputs.version }}
+        run: |
+          if gh release view "v$VERSION" --repo "$GITHUB_REPOSITORY" >/dev/null 2>&1; then
+            gh release upload "v$VERSION" release-assets/* --repo "$GITHUB_REPOSITORY" --clobber
+            gh release edit "v$VERSION" --repo "$GITHUB_REPOSITORY" --notes-file "docs/releases/$VERSION.md"
+          else
+            gh release create "v$VERSION" release-assets/* --repo "$GITHUB_REPOSITORY" --target "$GITHUB_SHA" --title "AI 圖片放大王 / AI Upscale King $VERSION" --notes-file "docs/releases/$VERSION.md" --latest
+          fi

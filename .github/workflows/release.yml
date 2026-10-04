@@ -74,6 +74,7 @@ jobs:
           path: |
             delivery/**/ui-report.json
             delivery/**/design-gates.json
+            delivery/**/*.png
             delivery/release-check-*/*.json
   publish:
     if: github.event_name == 'workflow_dispatch' && inputs.publish && github.ref == 'refs/heads/main'

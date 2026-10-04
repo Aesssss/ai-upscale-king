@@ -135,7 +135,9 @@ class MainWindow(QMainWindow):
         custom_row.setContentsMargins(0, 0, 0, 0); custom_row.setSpacing(6)
         self.width_cm = QDoubleSpinBox(); self.height_cm = QDoubleSpinBox()
         for spin, name, value in [(self.width_cm, '自訂第一邊長（厘米）', 40), (self.height_cm, '自訂第二邊長（厘米）', 60)]:
-            spin.setRange(.1, 199); spin.setDecimals(2); spin.setValue(value); spin.setFixedWidth(110)
+            spin.setRange(.1, 199); spin.setDecimals(2); spin.setValue(value)
+            spin.ensurePolished()
+            spin.setFixedWidth(max(110, spin.minimumSizeHint().width()))
             spin.setAccessibleName(name); spin.setKeyboardTracking(False)
         custom_row.addWidget(self.width_cm); custom_row.addWidget(label('×', 'muted'))
         custom_row.addWidget(self.height_cm); custom_row.addWidget(label('cm', 'muted')); custom_row.addStretch()

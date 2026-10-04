@@ -5,7 +5,7 @@ import sys
 from pathlib import Path
 os.environ.setdefault('QT_QPA_PLATFORM', 'offscreen')
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
-from PIL import Image
+from PIL import Image, ImageDraw
 from PySide6.QtWidgets import QApplication, QPushButton, QComboBox
 from PySide6.QtCore import QPoint
 from PySide6.QtTest import QTest
@@ -22,7 +22,12 @@ def visible(cls):
     return [item for item in w.findChildren(cls) if item.isVisibleTo(w) and item.window() == w]
 capture('01_空白狀態')
 assert len(visible(QComboBox)) == 1 and len([b for b in visible(QPushButton) if b.objectName() == 'primary']) == 1
-source = ROOT / 'delivery/驗證記錄/本地測試圖.png'
+source = QA / '合成介面測試圖.png'
+fixture = Image.new('RGB', (240, 360), '#CFD8C9')
+draw = ImageDraw.Draw(fixture)
+draw.ellipse((30, 40, 210, 220), fill='#B36C4D')
+for y in range(245, 325, 16): draw.line((30, y, 210, y), fill='#506152', width=4)
+fixture.save(source)
 w.add_files([source]); capture('02_單張圖片')
 assert len(visible(QComboBox)) == 1 and len(visible(QPushButton)) <= 3
 assert w.options().ppi == 300 and w.options().pixels == (7016, 9934)
